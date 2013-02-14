@@ -153,7 +153,7 @@ class DAV extends \OC\Files\Storage\Common{
 
 	public function unlink($path) {
 		$this->init();
-		return $this->simpleResponse('DELETE', $path, null ,204);
+		return $this->simpleResponse('DELETE', $path, null, 204);
 	}
 
 	public function fopen($path,$mode) {
@@ -237,11 +237,11 @@ class DAV extends \OC\Files\Storage\Common{
 
 	public function getFile($path,$target) {
 		$this->init();
-		$source=$this->fopen($path,'r');
-		file_put_contents($target,$source);
+		$source=$this->fopen($path, 'r');
+		file_put_contents($target, $source);
 	}
 
-	public function uploadFile($path,$target) {
+	public function uploadFile($path, $target) {
 		$this->init();
 		$source=fopen($path, 'r');
 
